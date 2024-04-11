@@ -8,6 +8,7 @@
         public required int TableNumber { get; set; }
         public string? Other { get; set; }
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
+        public List<MenuItem> MenuItems { get; set; }
 
         public Order (int orderId, TimeOnly placedAt, DateOnly placedOn, int tableNumber, string? other, OrderStatus orderStatus)
         {
@@ -17,6 +18,7 @@
             TableNumber = tableNumber;
             Other = other;
             OrderStatus = orderStatus;
+            MenuItems = new List<MenuItem>();
         }
     }
     public enum OrderStatus
